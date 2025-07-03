@@ -7,11 +7,32 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.11",
         "@tailwindcss/vite": "^4.0.0",
+        "autoprefixer": "^10.4.21",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.2.0",
-        "tailwindcss": "^4.0.0",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.11",
         "vite": "^6.2.4"
-    }
+    },
+    "name": "invoice-template",
+    "version": "1.0.0",
+    "description": "A professional, modern invoice template generator built with Laravel and Tailwind CSS. Create beautiful invoices with real-time preview and export functionality.",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/integratingme/invoice-template.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/integratingme/invoice-template/issues"
+    },
+    "homepage": "https://github.com/integratingme/invoice-template#readme"
 }
