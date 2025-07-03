@@ -1,62 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Invoice Template Generator
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A professional, modern invoice template generator built with Laravel and Tailwind CSS. Create beautiful invoices with real-time preview and export functionality.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+✨ **Modern Interface** - Clean, professional design with blue color scheme
+📝 **Real-time Preview** - See your invoice as you type
+🧮 **Automatic Calculations** - Tax, discount, and total calculations
+📄 **Multiple Export Options** - Print and PDF download (PDF feature in development)
+📱 **Responsive Design** - Works perfectly on desktop and mobile
+⚡ **Fast & Intuitive** - Add/remove line items dynamically
+💼 **Professional Layout** - Similar to popular invoice generators
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 12 (PHP 8.2+)
+- **Frontend**: Tailwind CSS, Vanilla JavaScript
+- **Icons**: Font Awesome 6
+- **Database**: SQLite (default)
 
-## Learning Laravel
+## Quick Start
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Clone and Install**
+   ```bash
+   git clone <your-repo-url>
+   cd invoice-template
+   composer install
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Run the Application**
+   ```bash
+   php artisan serve
+   ```
 
-## Laravel Sponsors
+4. **Open in Browser**
+   Visit `http://localhost:8000` to start creating invoices!
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## How to Use
 
-### Premium Partners
+1. **Fill Company Details** - Add your company information in the "From" section
+2. **Add Client Info** - Fill in your client's details in the "Bill To" section  
+3. **Add Line Items** - Click "Add Item" to add products/services
+4. **Set Tax & Discount** - Configure tax rate and discount percentage
+5. **Preview & Export** - Use the real-time preview and export options
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Features in Detail
+
+### Invoice Information
+- Invoice number (auto-generated)
+- Issue date and due date
+- Company and client details
+- Contact information
+
+### Line Items
+- Dynamic item addition/removal
+- Description, quantity, rate fields
+- Automatic total calculation per item
+- Real-time subtotal updates
+
+### Calculations
+- Subtotal calculation
+- Percentage-based discounts
+- Tax calculations
+- Grand total with all adjustments
+
+### Export Options
+- **Print**: Direct browser printing
+- **PDF Download**: Server-side PDF generation (in development)
+- **Preview**: Real-time invoice preview
+
+## Development
+
+### Project Structure
+```
+app/Http/Controllers/
+├── InvoiceController.php    # Main invoice logic
+
+resources/views/
+├── invoice/
+    └── generator.blade.php  # Main invoice template
+
+routes/
+├── web.php                 # Application routes
+```
+
+### Adding PDF Generation
+
+To add PDF generation capability:
+
+1. Install a PDF library like DomPDF:
+   ```bash
+   composer require barryvdh/laravel-dompdf
+   ```
+
+2. Update the `InvoiceController::generatePdf()` method to generate actual PDFs
+
+3. Create a PDF template view for proper formatting
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b new-feature`
+3. Commit changes: `git commit -am 'Add new feature'`
+4. Push to branch: `git push origin new-feature`
+5. Submit a pull request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# invoice-template
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+If you encounter any issues or have questions, please open an issue on GitHub.
+
+---
+
+**Created with ❤️ using Laravel & Tailwind CSS**
